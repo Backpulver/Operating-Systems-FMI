@@ -11,8 +11,12 @@
             "id": "b8287077cfac494c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Scripts/05.scripts.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Scripts/05.scripts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Scripts/05.scripts.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Scripts/05.scripts.md"
+              }
             }
           }
         ]
@@ -149,6 +157,11 @@
   },
   "active": "b8287077cfac494c",
   "lastOpenFiles": [
+    "Miscellaneous/mypassword.txt",
+    "Miscellaneous/New Text Document.txt",
+    "Miscellaneous/ssa-input.txt",
+    "Miscellaneous/songs.tgz",
+    "Miscellaneous/emp.data.txt",
     "Scripts/pasteTwoFiles.sh",
     "Scripts/isAllLettersOrAllNumbers.sh",
     "Scripts/greeting.sh",
@@ -161,9 +174,6 @@
     "04. processes.md",
     "03.pipes.md",
     "03. pipes.md",
-    "Miscellaneous/si.txt",
-    "Miscellaneous/population.csv",
-    "Miscellaneous",
     "02.commands.md",
     "README.md"
   ]
