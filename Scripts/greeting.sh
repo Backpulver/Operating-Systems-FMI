@@ -1,7 +1,11 @@
 #!/bin/bash
 
-if [[ $# -eq 1 ]] then
-	echo "Hello, $1"
+echo "Please enter your name: "
+read -r name
+
+if [[ $name =~ ^[A-Za-z\ \-]+$ ]]; then
+	echo "Hello, $name"
 else
-	echo "Can only make a greeting with 1 string"
+	echo "Invalid name"
+	exit 1
 fi
