@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Please enter your name: "
+echo -n "Please enter your name: "
 read -r name
 
 if [[ $name =~ ^[A-Za-z\ \-]+$ ]]; then

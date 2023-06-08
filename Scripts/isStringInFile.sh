@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Enter a file name"
+echo -n "Enter a file name: "
 read -r file
 if [[ ! -f $file ]]; then
 	echo "This is not a file"

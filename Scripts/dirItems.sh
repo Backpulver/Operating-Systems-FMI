@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Enter directory path: "
+echo -n "Enter directory path: "
 read -r dirPath
 
 filesCount=$(find $dirPath -mindepth 1 -maxdepth 1 -type f | wc -l)
