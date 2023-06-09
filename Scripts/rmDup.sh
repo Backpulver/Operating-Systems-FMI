@@ -20,7 +20,7 @@ for file in $fileOrder; do
 	filesRM=$(find "$1" -maxdepth 1 -type f -not -regex "$file" -exec sha1sum {} \; | grep "$currHash" | tr -s ' ' | cut -d' ' -f2)
 	
 	if [[ $filesRM != "" ]]; then
-		if ! echo "$filesRM" | xargs -d'\n' rm; then
+		if ! echo "$filesRM" | xargs rm; then
 			echo "Error when deleting"
 			exit 3
 		fi
