@@ -19,7 +19,7 @@ if [[ ! -f $file3 ]]; then
 	exit 3
 fi
 
-if paste $file1 $file2 > $file3; then
+if paste "$file1" "$file2" > "$file3"; then
 	echo "Success"
 else
 	echo "Error"

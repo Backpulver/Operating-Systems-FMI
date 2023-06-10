@@ -5,14 +5,14 @@ if [[ $# -ne 1 ]]; then
 	exit 1
 fi
 
-if file $1 | egrep -q "C source"; then
+if file "$1" | grep -q "C source"; then
 	echo "File is in the correct format, OK"
 else
 	echo "The provided argument is not a C file"
 	exit 2
 fi
 
-str=$(cat $1 | tr -d "\n")
+str=$(cat "$1" | tr -d "\n")
 currCount=0
 maxCount=0
 

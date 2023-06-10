@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $# -ne 1 ]] then
+if [[ $# -ne 1 ]]; then
 	echo "The script accepts only one parameter"
 	exit 1
 fi

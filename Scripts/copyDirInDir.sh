@@ -16,7 +16,7 @@ if [[ $# -eq 2 && ! -d $2 ]]; then
 fi
 
 if [[ $# -eq 2 ]]; then
-	if find $1 -mindepth 1 -mmin -45 -exec cp -r {} $2 \;; then
+	if find "$1" -mindepth 1 -mmin -45 -exec cp -r {} "$2" \;; then
 		echo "Copy of files modified in the last 45mins successful"
 	else
 		echo "Error when copying"
@@ -25,7 +25,7 @@ if [[ $# -eq 2 ]]; then
 	dir2=$2
 else
 	dateTime=$(date +%Y-%m-%d)
-	if mkdir $dateTime; then
+	if mkdir "$dateTime"; then
 		echo "Creating new dir successful"
 	else
 		echo "Directory with this date and time already exists"

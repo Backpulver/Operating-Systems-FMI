@@ -10,7 +10,7 @@ fi
 echo "Enter a string to search for in the file"
 read -r string
 
-egrep -q $string $file
+grep -q "$string" "$file"
 status=$?
 
 if [[ $status -eq 0 ]]; then
