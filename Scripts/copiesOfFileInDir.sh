@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $# -ne 2 ]]; then
-	echo "The script accespts a file and a directory as arguments"
+	echo "The script accepts a file and a directory as arguments"
 	exit 1
 fi
 
