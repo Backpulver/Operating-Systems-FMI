@@ -11,7 +11,7 @@ Here you can find solutions for most of the problems in the course
 - Miscellaneous - files used in the commands
 - 05.scripts folder
 	- [05.scripts.md](https://github.com/Backpulver/Operating-Systems-FMI/blob/main/Repo/05.scripts/05.scripts.md) - problems and example runs for scripts
-	- [Code](https://github.com/Backpulver/Operating-Systems-FMI/tree/main/Repo/05.scripts/Code) - raw script files
+	- Code - raw script files
 	- others - dummy files, used for testing
 
 ### Collection of tasks (сборник)
