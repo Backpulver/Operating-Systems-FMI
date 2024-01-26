@@ -5,7 +5,7 @@ if ! [[ $(whoami) == "root" ]]; then
     exit 1
 fi
 
-while IFS= read -r line; do
+while IFS= read -r line || [ -n "$line" ]; do
     username=$(echo $line | cut -d':' -f1)
     homedir=$(echo $line | cut -d':' -f6)
 
