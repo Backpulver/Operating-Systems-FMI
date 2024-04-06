@@ -1,9 +1,13 @@
 #!/bin/bash
 
-if [[ $# -ne 2 ]]; then
+if [ "$#" -ne 2 ]; then
 	echo "Usage: $0 <number1> <number2>"
 	exit 1
 fi
+
+# if ( echo $1 | grep -v 'regex'); then
+
+# fi
 
 if ! [[ $1 =~ ^[0-9]+$ && $2 =~ ^[0-9]+$ ]]; then
 	echo "The parameters are not numbers!"
