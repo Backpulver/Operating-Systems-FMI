@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! [ "$(id -u)" == 0 ]; then
+if [ "$(id -u)" -ne 0 ]; then
     echo "Not a root user!" 1>&2
     exit 1
 fi
