@@ -1,0 +1,5 @@
+BOO=73
+BAR=42 
+BAZ=
+ENABLED_OPTIONS=a b c d
+ENABLED_OPTIONS_EXTRA=a b bb c f e f 
