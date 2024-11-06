@@ -7,35 +7,50 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 int main(int argc, char* argv[])
 {
-	int fd1;
-	int i = 0;
-	char c;
+    int fd1;
+    int i = 0;
+    char c;
 
-	if (argc != 2) {
-		write(2, "err\n", 4);
-		exit(1);
-	}
+    if (argc != 2)
+    {
+	    errx(1, "Invalid number of arguments. Usage: %s file", argv[0]);
+    }
 
-	if ((fd1 = open(argv[1], O_RDONLY)) == -1) {
-		write(2, "File failed to open in read mode\n", 33);
-		exit(1);
-	}
+    fd1 = open(argv[1], O_RDONLY);
+    if (fd1 == -1)
+    {
+        err(2, "File failed to open in read mode");
+    }
 
-	while (read(fd1, &c, sizeof(c)) == sizeof(c)) {
-		if (c == '\n') {
-			i=i+1;
-		}
+    while (read(fd1, &c, sizeof(c)) == sizeof(c))
+    {
+        if (c == '\n')
+        {
+            i++;
+        }
 
-		write(1, &c, 1);
+        if (write(1, &c, 1) != 1)
+        {
+            perror("Failed to write character to stdout");
+            close(fd1); 
+            exit(3);
+        }
 
-		if (i == 10) {
-			break;
-		}
-	}
+        if (i == 10)
+        {
+            break;
+        }
+    }
 
-	close(fd1);
-	exit(0);
+    if (close(fd1) == -1)
+    {
+        perror("Failed to close file");
+        exit(4);
+    }
+
+    exit(0);
 }

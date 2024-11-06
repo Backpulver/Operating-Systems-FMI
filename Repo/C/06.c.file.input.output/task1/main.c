@@ -2,31 +2,45 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <errno.h>
 
-//int main(int argc, char* argv[])
-int main(void)
+int main()
 {
-	int fd1;
-	int fd2;
-	char c;
+    int fd1, fd2;
+    char c;
 
-	fd1 = open("foo.txt", O_RDONLY);
-	if (fd1 == -1) {
-		write(2, "File failed to open in read mode\n", 33);
-		exit(1);
-	}
+    fd1 = open("file1.txt", O_RDONLY);
+    if (fd1 == -1) 
+	{
+        err(1, "Error opening file for reading");  
+    }
 
-// FIXME
-	if ( ( fd2 = open("bar.txt", O_CREAT|O_WRONLY) ) == -1 ){
-		write(2, "File failed to open in write mode\n", 34);
-		exit(1);
-	}
+    fd2 = open("file2.txt", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR);
+    if (fd2 == -1) 
+	{
+        close(fd1); 
+        err(2, "Error opening file for writing");
+    }
 
-	while ( read(fd1, &c, 1) == 1 ){
-		write(fd2, &c, 1);
-	}
+    while (read(fd1, &c, 1) == 1) 
+	{
+        if (write(fd2, &c, 1) != 1) 
+		{
+            close(fd1);
+            close(fd2);
+            err(3, "Error writing to file");
+        }
+    }
 
-	close(fd1);
-	close(fd2);
-	exit(0);
+    if (close(fd1) == -1) 
+	{
+        err(4, "Error closing source file");
+    }
+    if (close(fd2) == -1) 
+	{
+        err(5, "Error closing destination file");
+    }
+
+    exit(0);
 }

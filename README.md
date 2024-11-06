@@ -37,10 +37,10 @@ Here you can find solutions for most of the problems in the course
 
 ### Scripts
 
-| Solutions      |     |
-| -------------- | --- |
-| [2016-SE-01]() |     |
-| [2016-SE-02]() |     |
-| [2016-SE-03]() |     |
-| [2017-IN-01]() |     | 
-|                |     |
+| Solutions      |
+| -------------- |
+| [2016-SE-01]() |
+| [2016-SE-02]() |
+| [2016-SE-03]() |
+| [2017-IN-01]() |
+|                |
