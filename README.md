@@ -4,12 +4,12 @@ Here you can find solutions for most of the problems in the course
 
 ## [repo](https://github.com/avelin/fmi-os/tree/master/exercises) :
 
-| Solutions                                                                                                 |
-| --------------------------------------------------------------------------------------------------------- |
-| [02.commands](https://github.com/Backpulver/Operating-Systems-FMI/blob/main/Repo/02.commands.md)          |
-| [03.pipes](https://github.com/Backpulver/Operating-Systems-FMI/blob/main/Repo/03.pipes.md)                |
-| [04.processes](https://github.com/Backpulver/Operating-Systems-FMI/blob/main/Repo/04.processes.md)        |
-| [05.scripts](https://github.com/Backpulver/Operating-Systems-FMI/blob/main/Repo/05.scripts/05.scripts.md) |
+| Solutions                                   |
+| ------------------------------------------- |
+| [02.commands](Repo/02.commands.md)          |
+| [03.pipes](Repo/03.pipes.md)                |
+| [04.processes](Repo/04.processes.md)        |
+| [05.scripts](Repo/05.scripts/05.scripts.md) | 
 
 ## Exams:
 
@@ -45,3 +45,4 @@ Here you can find solutions for most of the problems in the course
 | [2016-SE-03_2](https://github.com/Backpulver/Operating-Systems-FMI/blob/main/Exams/Shell/Scripts/2016-SE-03_2/2016-SE-03_2.sh) |
 | [2017-IN-01](https://github.com/Backpulver/Operating-Systems-FMI/blob/main/Exams/Shell/Scripts/2017-IN-01/2017-IN-01.sh)       |
 |                                                                                                                                |
+
