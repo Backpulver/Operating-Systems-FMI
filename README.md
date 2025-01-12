@@ -2,14 +2,14 @@
 
 Here you can find solutions for most of the problems in the course
 
-## [repo](https://github.com/avelin/fmi-os/tree/master/exercises) :
+## [repo](https://github.com/avelin/fmi-os/tree/master):
 
 | Solutions                                   |
 | ------------------------------------------- |
 | [02.commands](Repo/02.commands.md)          |
 | [03.pipes](Repo/03.pipes.md)                |
 | [04.processes](Repo/04.processes.md)        |
-| [05.scripts](Repo/05.scripts/05.scripts.md) | 
+| [05.scripts](Repo/05.scripts.md) | 
 
 ## Exams:
 
