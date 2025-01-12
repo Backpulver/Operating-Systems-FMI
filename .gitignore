@@ -80,4 +80,5 @@ dkms.conf
 
 # Unnecessary local files
 Repo/05.scripts/
+Repo/Misc/
 Notes/
