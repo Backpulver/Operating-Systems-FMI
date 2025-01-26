@@ -1,0 +1,6 @@
+# This is a comment line with the word Eastasia
+Eurasia is our ally.
+# Another comment here with Eurasia
+Eastasia is our enemy.
+# The word Eastasia should not be replaced in comments.
+The strategy of Eurasia and Eastasia is unique.

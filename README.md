@@ -43,5 +43,9 @@ Here you can find solutions for most of the problems in the course
 | [2016-SE-03](Exams/Shell/Scripts/2016-SE-03/2016-SE-03.sh)       |
 | [2016-SE-03_2](Exams/Shell/Scripts/2016-SE-03_2/2016-SE-03_2.sh) |
 | [2017-IN-01](Exams/Shell/Scripts/2017-IN-01/2017-IN-01.sh)       |
-|                                                                  |
+| [2023-CE-02]()                                                   |
+| [2023-SE-01](Exams/Shell/Scripts/2023-SE-01/2023-SE-01.sh)       |
+| [2023-SE-04](Exams/Shell/Scripts/2023-SE-04/2023-SE-04.sh)       |
+| [2023-SE-05](Exams/Shell/Scripts/2023-SE-05/2023-SE-05.sh)       |
+| [2024-SE-01](Exams/Shell/Scripts/2024-SE-01/2024-SE-01.sh)       |
 
