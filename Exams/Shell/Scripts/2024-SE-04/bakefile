@@ -1,0 +1,4 @@
+chapter2.pdf:chapter1.md:pandoc -o chapter1.pdf chapter1.md
+chapter2.pdf:chapter2.md drawing42.svg:pandoc -o chapter2.pdf chapter2.md
+book.pdf:chapter1.pdf chapter2.pdf:pdfunite chapter1.pdf chapter2.pdf book.pdf
+drawing42.svg:drawing42.dia:dia_to_svg drawing42.dia > drawing42.svg
