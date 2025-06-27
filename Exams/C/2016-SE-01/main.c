@@ -4,78 +4,68 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <err.h>
+#include <stdint.h>
 
-long get_file_size(char *filename) {
-    FILE *fp = open(filename, "r");
+int cmpByte(const void *, const void *);
+int cmpByte(const void *a, const void *b)
+{
+    const uint8_t byteA = *(const uint8_t *)a;
+    const uint8_t byteB = *(const uint8_t *)b;
 
-    if (fp==NULL)
+    if (byteA < byteB)
         return -1;
-
-    if (lseek(fp, 0, SEEK_END) < 0) {
-        close(fp);
-        return -1;
-    }
-
-    long size = ftell(fp);
-    close(fp);
-    return size;
+    if (byteA > byteB)
+        return 1;
+    return 0;
 }
 
 int main(int argc, char *argv[])
 {
     if (argc != 2)
     {
-        errx(1, "The porgram sorts only one file");
+        errx(1, "Invalid number of arguments. Usage: %s <file>", argv[0]);
     }
 
-    const char *filename = argv[1];
-    int fd = open(filename, O_RDWR);
-    if (fd < 0)
+    int fd;
+    if ((fd = open(argv[1], O_RDWR)) == -1)
     {
-        err(2, "Cannot open file");
+        err(2, "Failed to open file: %s", argv[1]);
     }
 
-    unsigned long fileSize = lseek(fd, 0, SEEK_END);
-    if (fileSize < 0)
+    struct stat st;
+    if (fstat(fd, &st) == -1)
     {
-        close(fd);
-        err(3, "Oh no, it's broken...");
+        err(3, "Failed to fstat");
     }
 
-    unsigned char *buffer = malloc(fileSize);
+    int fileSize = st.st_size;
+    uint8_t *buffer = malloc(fileSize);
+
     if (!buffer)
     {
-        close(fd);
-        err(4, "Cannot allocate memory");
+        err(4, "Failed to allocate memory");
     }
 
-    if (read(fd, buffer, fileSize) != fileSize)
+    ssize_t readBytes = read(fd, buffer, fileSize);
+    if (readBytes != fileSize)
     {
-        free(buffer);
-        close(fd);
-        err(5, "Cannot read");
+        err(5, "Could not read from file: %s", argv[1]);
     }
 
-    qsort(buffer, fileSize, sizeof(unsigned char));
+    qsort(buffer, fileSize, sizeof(uint8_t), cmpByte);
 
-    if (lseek(fd, 0, SEEK_SET) < 0)
+    if (lseek(fd, 0, SEEK_SET) == -1)
     {
-        perror("lseek");
-        free(buffer);
-        close(fd);
-        return 1;
+        err(6, "Failed to seek to begining");
     }
 
-    if (write(fd, buffer, filesize) != filesize)
+    if (write(fd, buffer, fileSize) != fileSize)
     {
-        perror("write");
-        free(buffer);
-        close(fd);
-        return 1;
+        err(5, "Failed to write to file: %s", argv[1]);
     }
 
-    free(buffer);
     close(fd);
+    free(buffer);
 
-    return 0;
+    exit(0);
 }
