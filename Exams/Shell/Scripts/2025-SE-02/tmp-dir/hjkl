@@ -1,0 +1,4 @@
+name: asdf
+pidfile: /tmp/sleeper_pid2
+outfile: /tmp/sleeper_out2
+comm: while true; do echo ZzZ; sleep 10; done

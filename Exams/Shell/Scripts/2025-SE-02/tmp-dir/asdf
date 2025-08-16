@@ -1,0 +1,4 @@
+name: sleeper
+pidfile: /tmp/sleeper_pid
+outfile: /tmp/sleeper_out
+comm: while true; do echo ZzZ; sleep 10; done
