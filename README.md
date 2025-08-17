@@ -13,9 +13,7 @@ Here you can find solutions for most of the problems in the course
 
 ## [Exams:](Exams/os-problems.pdf)
 
-| Solutions                                                 |
-|-----------------------------------------------------------|
-| [Shell Stream-Processing](Exams/Shell/Stream-Processing/) |
-| [Shell Scripts](Exams/Shell/Scripts/)                     |
-| [C Input-Output]()                                        |
-| [C Processes-Pipes-Input-Output]()                        |
+| Shell                                               | C                                                          | Theory |
+|-----------------------------------------------------|------------------------------------------------------------|--------|
+| [Stream processing](Exams/Shell/Stream-Processing/) | [Input & output](Exams/C/Input-Output/)                    |        |
+| [Scripts](Exams/Shell/Scripts/)                     | [Processes & pipes](Exams/C/Processes-Pipes-Input-Output/) |        |
