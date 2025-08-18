@@ -1,8 +1,9 @@
 #!/bin/bash
 
 set -euo pipefail
+
 if [ "$#" -ne 1 ]; then
-	echo "Usage: "${0}" <username>"
+	echo "Usage: ${0} <username>"
 	exit 1
 fi
 
@@ -22,7 +23,7 @@ allUsers=$(ps -eo user= | sort -u)
 for user in $allUsers; do
 	processesUser=$(ps -u "${user}" -o pid= | wc -l)
 	if [ "$processesUser" -gt "$processesFOO" ]; then
-		echo $user
+		echo "${user}"
 	fi
 done
 
@@ -36,7 +37,7 @@ for time in $times; do
 	s=$(echo "$time" | cut -d':' -f3)
 	seconds=$((10#$h * 3600 + 10#$m * 60 + 10#$s))
 	totalSeconds=$((totalSeconds + seconds))
-	((count++))
+	count=$((count + 1))
 done
 
 if [ "$count" -eq 0 ]; then
