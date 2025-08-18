@@ -1,13 +1,21 @@
 #!/bin/bash
 
+set -euo pipefail 
+
 if [ "$#" -ne 1 ]; then
-	echo "Usage: $0 <directory>" 1>&2
+	echo "Usage: ${0} <directory>" 1>&2
 	exit 1
 fi
 
-if [ ! -d "$1" ]; then
-	echo "$1 is not a directory" 1>&2
+if [ ! -d "${1}" ]; then
+	echo "${1} is not a directory" 1>&2
 	exit 2
 fi
 
-find "$1" -type l -not -exec test -e {} \; -print 2>/dev/null
+symlinks=$(find "${1}" -type l  2>/dev/null)
+
+for link in ${symlinks}; do
+	if [ ! -e "${link}" ]; then
+		echo "${link}"
+	fi
+done
