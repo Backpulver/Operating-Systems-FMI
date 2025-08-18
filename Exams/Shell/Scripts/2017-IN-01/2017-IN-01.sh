@@ -1,7 +1,9 @@
 #!/bin/bash
 
+set -euo pipefail
+
 if [ "$#" -ne 3 ]; then
-	echo "Usage "$0" <name_of_file> <string1> <string2>" 1>&2
+	echo "Usage: ${0} <name_of_file> <string1> <string2>" 1>&2
 	exit 1
 fi 
 
