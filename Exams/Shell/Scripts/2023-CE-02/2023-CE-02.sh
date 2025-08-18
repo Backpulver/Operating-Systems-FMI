@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 if [ "$#" -ne 3 ]; then
 	echo "Usage: ${0} <Data file 1> <Data file 2> <Black hole name>"  >&2
 	exit 1
@@ -15,8 +17,8 @@ if [ ! -f "${2}" ]; then
 	exit 3
 fi
 
-distance1=$(grep -Eo "^.+: (0|[1-9][0-9]*) megaparsecs$" "${1}" | grep "^${3}:" | cut -d':' -f2 | cut -d' ' -f2)
-distance2=$(grep -Eo "^.+: (0|[1-9][0-9]*) megaparsecs$" "${2}" | grep "^${3}:" | cut -d':' -f2 | cut -d' ' -f2)
+distance1=$(grep -Eo "^.+: (0|[1-9][0-9]*) megaparsecs$" "${1}" | grep "^${3}:" | cut -d':' -f2 | cut -d' ' -f2 || true)
+distance2=$(grep -Eo "^.+: (0|[1-9][0-9]*) megaparsecs$" "${2}" | grep "^${3}:" | cut -d':' -f2 | cut -d' ' -f2 || true)
 
 answerFile=""
 
