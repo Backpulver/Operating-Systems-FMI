@@ -79,6 +79,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Clang
+.clang-format
+
 # Unnecessary local files
 Repo/05.scripts/
 Repo/Misc/
